@@ -6,7 +6,7 @@
 FROM python:3.5-alpine
 
 ## Choose between master or develop branch (or any other)
-ARG BRANCH=master
+ARG BRANCH=v1.2
 
 ## Images labels
 LABEL   version = "1.0" \
