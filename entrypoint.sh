@@ -16,17 +16,17 @@ if [ ! -z "$SHNG_USE_MYSQL" ]; then
 fi
 
 # Check if there is a minimum of config files, if not provide some example to prevent startup errors
-if [ ! -e "$SHNG_PATH/etc/smarthome.yaml" ]; then 
-    cp $EXAMPLES_PATH/etc/smarthome.yaml $SHNG_PATH/etc/smarthome.yaml; 
+if [ ! -e "$SHNG_PATH/etc/smarthome.conf" ]; then 
+    cp $EXAMPLES_PATH/etc/smarthome.conf $SHNG_PATH/etc/smarthome.conf; 
 fi
 if [ ! -e "$SHNG_PATH/etc/logging.yaml" ]; then 
     cp $EXAMPLES_PATH/etc/logging.yaml $SHNG_PATH/etc/logging.yaml; 
 fi
-if [ ! -e "$SHNG_PATH/etc/logics.yaml" ]; then 
-    cp $EXAMPLES_PATH/etc/logics.yaml $SHNG_PATH/etc/logics.yaml; 
+if [ ! -e "$SHNG_PATH/etc/logics.conf" ]; then 
+    cp $EXAMPLES_PATH/etc/logics.conf $SHNG_PATH/etc/logics.conf; 
 fi
-if [ ! -e "$SHNG_PATH/etc/plugin.yaml" ]; then 
-    cp $EXAMPLES_PATH/etc/plugin.yaml $SHNG_PATH/etc/plugin.yaml; 
+if [ ! -e "$SHNG_PATH/etc/plugin.conf" ]; then 
+    cp $EXAMPLES_PATH/etc/plugin.conf $SHNG_PATH/etc/plugin.conf; 
 fi
 
 # Launch our main service, preferably in debug mode as it should stay in foreground

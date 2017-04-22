@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [[ -z "$1" ]]; then
-    VERSION=1.3
+    VERSION=1.2
 else
     VERSION=$1
 fi
 
-docker build --rm --build-arg BRANCH=release-$VERSION -t foxi352/smarthome:VERSION -t foxi352/smarthome:latest --file Dockerfile.smarthome .
+docker build --rm --build-arg BRANCH=v$VERSION -t foxi352/smarthome:$VERSION --file Dockerfile.smarthome .
