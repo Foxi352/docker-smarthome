@@ -22,7 +22,7 @@ RUN apk add --no-cache git build-base linux-headers \
     && ./bin/fetch_plugins.sh \
     && chown -R smarthome:smarthome /usr/local/smarthome \
     && mkdir -p /usr/local/smarthome/var/run/ && mkdir -p /usr/local/examples/etc \
-    && cd /usr/local/smarthome/ && pip install -r requirements/all.txt && pip install pymysql \
+    && cd /usr/local/smarthome/ && pip install -r requirements_all.txt && pip install pymysql \
     && apk del build-base linux-headers
 
 COPY check_for_mysql.py /
