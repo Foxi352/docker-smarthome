@@ -22,8 +22,8 @@ fi
 if [ ! -e "$SHNG_PATH/etc/logging.yaml" ]; then 
     cp $EXAMPLES_PATH/etc/logging.yaml $SHNG_PATH/etc/logging.yaml; 
 fi
-if [ ! -e "$SHNG_PATH/etc/logics.conf" ]; then 
-    cp $EXAMPLES_PATH/etc/logics.conf $SHNG_PATH/etc/logics.conf; 
+if [ ! -e "$SHNG_PATH/etc/logic.conf" ]; then 
+    cp $EXAMPLES_PATH/etc/logic.conf $SHNG_PATH/etc/logic.conf; 
 fi
 if [ ! -e "$SHNG_PATH/etc/plugin.conf" ]; then 
     cp $EXAMPLES_PATH/etc/plugin.conf $SHNG_PATH/etc/plugin.conf; 
