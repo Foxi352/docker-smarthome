@@ -31,9 +31,12 @@ This example starts a version 1.3 container together with a MariaDB instance, bo
 
 The SmartHomeNG container will in this case wait for the database to be up and running before starting SmartHomeNG. Of course you will need to adapt plugin.yaml in smarthome/etc to match your database settings. See SmartHomeNG Git Wiki for details.
 
+    docker network create shng
+    
     docker run -d \
         --volume $PWD/files/mariadb:/var/lib/mysql \
         --hostname=database.docker \
+        --network=shng \
         --name=shng-mariadb \
         --env MYSQL_ROOT_PASSWORD=supersecure \
         --env MYSQL_DATABASE=smarthome \
@@ -49,7 +52,12 @@ The SmartHomeNG container will in this case wait for the database to be up and r
         --volume $PWD/files/smarthome/logics:/usr/local/smarthome/logics \
         --volume $PWD/files/smarthome/scenes:/usr/local/smarthome/scenes \
         --hostname=smarthome.docker \
-        --env SHNG_USE_MYSQL=yes
-        --env SHNG_MYSQL_HOST=shng-mariadb
+        --network=shng \
+        --env SHNG_USE_MYSQL=yes \
+        --env SHNG_MYSQL_HOST=shng-mariadb \
+        --env MYSQL_DATABASE=smarthome \
+        --env MYSQL_USER=smarthome \
+        --env MYSQL_PASSWORD=shngpassword \
         --name=shng-smarthome \
         foxi352/smarthome:1.3
+        
